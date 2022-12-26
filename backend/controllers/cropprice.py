@@ -7,6 +7,7 @@ import pandas as pd
 from datetime import datetime
 import random
 from pathlib import Path
+from sklearn.tree import DecisionTreeRegressor
 
 commodity_dict = {
     "arhar": "static\\Arhar.csv",
@@ -77,7 +78,7 @@ class Commodity:
         #X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.1, random_state=0)
 
         # Fitting decision tree regression to dataset
-        from sklearn.tree import DecisionTreeRegressor
+        # from sklearn.tree import DecisionTreeRegressor
         depth = random.randrange(7,18)
         self.regressor = DecisionTreeRegressor(max_depth=depth)
         self.regressor.fit(self.X, self.Y)
