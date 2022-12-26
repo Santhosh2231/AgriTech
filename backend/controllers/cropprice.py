@@ -32,7 +32,7 @@ commodity_dict = {
     "sugarcane": "static\\Sugarcane.csv",
     "sunflower": "static\\Sunflower.csv",
     "urad": "static\\Urad.csv",
-    "wheat": "\static\Wheat.csv",
+    "wheat": "static\\Wheat.csv",
 
 }
 
@@ -71,6 +71,7 @@ class Commodity:
         path_2 = Path.cwd()
         path_2 = str(path_2)+"\\controllers\\"+csv_name
         dataset = pd.read_csv(path_2)
+        # print(path_2)
         self.X = dataset.iloc[:, :-1].values
         self.Y = dataset.iloc[:, 3].values
 
@@ -80,7 +81,9 @@ class Commodity:
         # Fitting decision tree regression to dataset
         # from sklearn.tree import DecisionTreeRegressor
         depth = random.randrange(7,18)
+        # print(depth)
         self.regressor = DecisionTreeRegressor(max_depth=depth)
+        # print(self.X,self.Y)
         self.regressor.fit(self.X, self.Y)
         #y_pred_tree = self.regressor.predict(X_test)
         # fsa=np.array([float(1),2019,45]).reshape(1,3)
@@ -89,7 +92,8 @@ class Commodity:
     def getPredictedValue(self, value):
         if value[1]>=2019:
             fsa = np.array(value).reshape(1, 3)
-            #print(" ",self.regressor.predict(fsa)[0])
+            # print(self.regressor)
+            # print(" ",self.regressor.predict(fsa)[0])
             return self.regressor.predict(fsa)[0]
         else:
             c=self.X[:,0:2]
@@ -105,7 +109,7 @@ class Commodity:
             #print(index, " ",ind)
             #print(x[ind])
             #print(self.Y[i])
-            print(self.Y[i])
+            # print(self.Y[i])
             return self.Y[i]
 
     def getCropName(self):
@@ -127,7 +131,9 @@ def TopFiveWinners():
     change = []
 
     for i in commodity_list:
+        # print(i.regressor)
         current_predict = i.getPredictedValue([float(current_month), current_year, current_rainfall])
+        # print(current_predict)
         current_month_prediction.append(current_predict)
         prev_predict = i.getPredictedValue([float(prev_month), current_year, prev_rainfall])
         prev_month_prediction.append(prev_predict)
@@ -138,7 +144,7 @@ def TopFiveWinners():
     to_send = []
     for j in range(0, 5):
         perc, i = sorted_change[j]
-        print(commodity_list[i])
+        # print(commodity_list[i])
         name = commodity_list[i].getCropName().split('\\')[1]
         to_send.append([name, round((current_month_prediction[i] * base[name]) / 100, 2), round(perc, 2)])
     #print(to_send)
@@ -180,10 +186,12 @@ def SixMonthsForecast():
     month4=[]
     month5=[]
     month6=[]
+    # print(commodity_list)
     for i in commodity_list:
-        if i.getCropName().split("\\")[1]=='static':
-            break
+        # print(i.getCropName())
         crop=SixMonthsForecastHelper(i.getCropName())
+        # print("Crop")
+        # print(crop)
         k=0
         for j in crop:
             time = j[0]
@@ -208,8 +216,10 @@ def SixMonthsForecast():
     month4.sort()
     month5.sort()
     month6.sort()
+    # print("Month6")
+    # print(month6)
     crop_month_wise=[]
-    crop_month_wise.append([month1[0][3],month1[len(month1)-1][2],month1[len(month1)-1][0],month1[len(month1)-1][1],month1[0][2],month1[0][0],month1[0][1]])
+    crop_month_wise.append([month1[0][3], month1[len(month1)-1][2],month1[len(month1)-1][0],month1[len(month1)-1][1],month1[0][2],month1[0][0],month1[0][1]])
     crop_month_wise.append([month2[0][3],month2[len(month2)-1][2],month2[len(month2)-1][0],month2[len(month2)-1][1],month2[0][2],month2[0][0],month2[0][1]])
     crop_month_wise.append([month3[0][3],month3[len(month3)-1][2],month3[len(month3)-1][0],month3[len(month3)-1][1],month3[0][2],month3[0][0],month3[0][1]])
     crop_month_wise.append([month4[0][3],month4[len(month4)-1][2],month4[len(month4)-1][0],month4[len(month4)-1][1],month4[0][2],month4[0][0],month4[0][1]])
@@ -223,22 +233,26 @@ def SixMonthsForecastHelper(name):
     current_month = datetime.now().month
     current_year = datetime.now().year
     current_rainfall = annual_rainfall[current_month - 1]
-    name = name.split("\\")[1]
+    name = name.split('\\')[1]
     name = name.lower()
-    print(name)
+    # print(name,)
     commodity = commodity_list[0]
     for i in commodity_list:
-        if name == str(i):
+        # print(i.getCropName().split("\\")[1].lower(),name,"nekvnwkvk")
+        if name == i.getCropName().split("\\")[1].lower():
+            # print("santhoeh")
             commodity = i
             break
     month_with_year = []
+    # print(commodity.getCropName())
     for i in range(1, 7):
         if current_month + i <= 12:
             month_with_year.append((current_month + i, current_year, annual_rainfall[current_month + i - 1]))
         else:
             month_with_year.append((current_month + i - 12, current_year + 1, annual_rainfall[current_month + i - 13]))
     wpis = []
-    current_wpi = commodity.getPredictedValue([float(current_month), current_year, current_rainfall])
+    # print(commodity.getCropName()," &&&&&&&&&",end="")
+    current_wpi = commodity.getPredictedValue([current_month, current_year, current_rainfall])
     change = []
 
     for m, y, r in month_with_year:
@@ -250,13 +264,7 @@ def SixMonthsForecastHelper(name):
     for i in range(0, len(wpis)):
         m, y, r = month_with_year[i]
         x = datetime(y, m, 1)
-        x = x.strftime("%b %y")
-        # name = name.capitalize()
-        # print(wpis[i])
-        # print(name)
-        # print(base)
-        # print(round((wpis[i]*base[name])/100, 2))
-        
+        x = x.strftime("%b %y")  
         crop_price.append([x, round((wpis[i]* base[name.capitalize()]) / 100, 2) , round(change[i], 2)])
 
 
@@ -270,7 +278,7 @@ def CurrentMonth(name):
     name = name.lower()
     commodity = commodity_list[0]
     for i in commodity_list:
-        if name == str(i):
+        if name == i.getCropName().split("\\")[1].lower():
             commodity = i
             break
     current_wpi = commodity.getPredictedValue([float(current_month), current_year, current_rainfall])
@@ -284,7 +292,7 @@ def TwelveMonthsForecast(name):
     name = name.lower()
     commodity = commodity_list[0]
     for i in commodity_list:
-        if name == str(i):
+        if name == i.getCropName().split("\\")[1].lower():
             commodity = i
             break
     month_with_year = []
@@ -342,7 +350,7 @@ def TwelveMonthPrevious(name):
     wpis = []
     crop_price = []
     for i in commodity_list:
-        if name == str(i):
+        if name == i.getCropName().split("\\")[1].lower():
             commodity = i
             break
     month_with_year = []

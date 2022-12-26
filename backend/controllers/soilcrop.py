@@ -26,8 +26,6 @@ class soilcrop(Resource):
         test_data = np.array([[N,P,K,temp,humidity,ph,rainfall]])
         data = pd.DataFrame(test_data)
 
-        # N,P,K,temperature,humidity,ph,rainfall,label
-        # Load the model from the file
         path_2 = Path.cwd()
         path_2 = str(path_2)+"\\controllers\\"+"soil_crop.pkl"
         print(path_2)
@@ -38,5 +36,4 @@ class soilcrop(Resource):
         print(y_pred)
         res = "The suitable crop for given soil conditions is "
         print(body)
-        id = 10
         return {'content':res}, 200
