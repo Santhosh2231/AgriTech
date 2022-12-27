@@ -8,6 +8,7 @@ import About from "./screens/About"
 import Contact from "./screens/Contact";
 import CropPrice from './screens/CropPrice';
 import CropDisease from './screens/CropDisease';
+import SoilCrop from './screens/SoilCrop';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/soilcropprediction" element={<SoilCrop />} />
       <Route path="/priceforecast" element={<Crops />} />
       <Route path="/cropdisease" element={<CropDisease />} />
       <Route path="/priceforecast/:crop" element={<CropPrice />} />
