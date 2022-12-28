@@ -22,7 +22,7 @@ const CropPrice = () => {
     useEffect(() => {
         const getData = async () => {
           try {
-            const { data } = await axios.get(`http://127.0.0.1:5000/api/cropprice/${crop}`);
+            const { data } = await axios.get(`http://127.0.0.1:8000/api/cropprice/${crop}`);
             // console.log(data)
             dispatch({ type: 'SET_DATA', payload: data })
             console.log(data);

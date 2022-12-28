@@ -3,18 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "Proxy": "http://127.0.0.1:5000",
+  "Proxy": "http://127.0.0.1:8000",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "aos-animations": "^0.0.7",
     "axios": "^1.2.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.1"
   },
   "devDependencies": {

@@ -3,12 +3,13 @@ import sys
 sys.path.append('../controllers')
 # importing
 from controllers.cropdisease import cropdisease
-from controllers.soilcrop import soilcrop
+from controllers.soilcrop import soilcrop,SoilAnalysis
 from controllers.cropprice import crops,cropprice
 
 
 
 def initialize_routes(api):
+    api.add_resource(SoilAnalysis, '/api/soilcrop')
     api.add_resource(soilcrop, '/api/soilcrop')
     api.add_resource(cropdisease, '/api/cropdisease')
     api.add_resource(crops,'/api/cropprice')

@@ -25,7 +25,7 @@ const Crops = () => {
     useEffect(() => {
         const getData = async () => {
           try {
-            const { data } = await axios.get('http://127.0.0.1:5000/api/cropprice');
+            const { data } = await axios.get('http://127.0.0.1:8000/api/cropprice');
             // console.log(data)
             dispatch({ type: 'SET_DATA', payload: data })
           } catch (err) {
@@ -58,7 +58,7 @@ const Crops = () => {
                     </div>
                     <div>
                         <p className='text-sm md:text-2xl my-10 align-middle justify-center'>Sixmonths Forecast crops </p>
-                        <Sixmonths data={state.data.context.sixmonths}/>
+                        <div className="overflow-auto"><Sixmonths data={state.data.context.sixmonths}/></div>
                     </div>
                     </>
                 ):"Loading...."

@@ -20,7 +20,14 @@ import Soyabean from "../assets/images/soyabean.jpg"
 import Sugarcane from "../assets/images/sugarcane.jpg"
 import Sunflower from "../assets/images/sunflower.jpg"
 import Urad from "../assets/images/urad.jpg"
-import Wheat from "../assets/images/wheat.jpg"
+import Wheat from "../assets/images/wheat.jpg";
+
+
+import {GrLinkedin} from "react-icons/gr";
+import {BsGithub} from "react-icons/bs";
+import {BsFacebook} from "react-icons/bs";
+import { GrMail } from "react-icons/gr";
+import { BsInstagram } from "react-icons/bs";
 
 
 const content ={
@@ -117,7 +124,38 @@ const content ={
             name: "Wheat",
             icon: Wheat
         },        
-    ]
+    ],
+    Contact: {
+        title: "Contact Me",
+        subtitle: "Report Inaccuracy or Discuss Projects with me",
+        social_media: [
+          {
+            text: "santhosh.raminedi22@gmail.com",
+            icon: GrMail,
+            link: "mailto:santhosh.raminedi22@gmail.com",
+          },
+          {
+            text: "santhosh.22.11",
+            icon: BsInstagram,
+            link: "https://www.instagram.com/santhosh.22.11/",
+          },
+          {
+            text: "raminedisanthosh22",
+            icon: GrLinkedin,
+            link: "https://www.linkedin.com/in/raminedisanthosh22/"
+          },
+          {
+            text:"Santhosh2231",
+            icon: BsGithub,
+            link: "https://github.com/Santhosh2231",
+          },
+          {
+            text: "Santhosh Raminedi",
+            icon: BsFacebook,
+            link: "https://www.facebook.com/santhosh.raminedi",
+          }
+        ],
+    },
 }
 
 export default content;
