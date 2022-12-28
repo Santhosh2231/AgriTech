@@ -37,7 +37,7 @@ function Navbar() {
           <Link to="/" className="block mt-4 lg:inline-block lg:mt-0  hover:text-white mr-4">
             <h6 className='text-teal-200 md:text-xl'>Home</h6>
           </Link>
-          <Link to="/about" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          <Link to="/#about" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             <h6 className='text-teal-200 md:text-xl'>About</h6>
           </Link>
           <Link to="/solutions" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">

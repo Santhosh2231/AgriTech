@@ -2,6 +2,7 @@ import { createElement, useRef } from "react";
 import  content  from "../utils/content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
+import AboutMe from "./AboutMe";
 
 const Contact = () => {
   const { Contact } = content;
@@ -31,6 +32,9 @@ const Contact = () => {
   };
 
   return (
+  <>
+
+  <AboutMe />
     <section className="bg-dark_primary my-10 container text-white min-h-full" id="contact">
       <Toaster />
       <div className="md:container px-5 py-14">
@@ -95,6 +99,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

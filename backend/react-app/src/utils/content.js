@@ -22,6 +22,9 @@ import Sunflower from "../assets/images/sunflower.jpg"
 import Urad from "../assets/images/urad.jpg"
 import Wheat from "../assets/images/wheat.jpg";
 
+import SoilImg from "../assets/icons/soilimg.jpg";
+import Diseaseimg from "../assets/icons/diseaseimg.jpg";
+import Priceimg from "../assets/icons/priceimg.jpg";
 
 import {GrLinkedin} from "react-icons/gr";
 import {BsGithub} from "react-icons/bs";
@@ -125,6 +128,18 @@ const content ={
             icon: Wheat
         },        
     ],
+    hero: {
+        firstName: "AgroTech ",
+        LastName: "Revolutionizing Farming with Artificial Intelligence",
+        btnArray: ["A Programmer","AI & ML Enthusiast"],
+        image: Paddy,
+      },
+    about:{
+        content: "Myself I am Santhosh. A diligent pre-final Computer Science student at VIT Chennai with an immense passion for AI&ML and MERN. Currently I am SAMSUNG PRISM developer. A passionate programmer, highly motivated and quick learner. I am always curious about things and enjoy learning. I like to solve problems and fix errors. I am a detailed oriented person and I keep my goals and tasks organized."
+      },
+    aboutus:{
+        content: "Artificial intelligence (AI) in farming can potentially revolutionize the way we grow and manage crops. AgroTech an AI Application can be used to optimize various aspects of farming, such as predicting and mitigating crop diseases, optimizing irrigation, and predicting crop prices.",
+    },
     Contact: {
         title: "Contact Me",
         subtitle: "Report Inaccuracy or Discuss Projects with me",
@@ -156,6 +171,33 @@ const content ={
           }
         ],
     },
+    Experience: {
+        title: "Goals",
+        subtitle: "Our Mission",
+        experience_content: [
+          {
+            org:"Crop Recommendation based on Soil fertility",
+            logo:SoilImg, 
+            link:"/soilanalysis",
+            work: "Currently working on the UWB Based Static Gesture Classification"
+          },
+          {
+    
+            org:"Crop Disease Detection and fertilizer recommendation",
+            logo: Diseaseimg,
+            link:"/cropdisease",
+            work: "I am currently part of a web developer team. I have worked on building a website for MIC club using React + tailwind css. I have designed an API's for the Notify events application"
+          },
+          
+          {
+            org:"Crop Price Prediction",
+            logo: Priceimg,
+           link:"/priceforecast",
+            work: "I have a developed a project on Recipe Recognition using CNN. In which model takes input image of food and it recognize the food and outputs the ingredient and recipe of the food"
+          },
+          
+        ],
+      },
 }
 
 export default content;
