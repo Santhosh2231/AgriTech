@@ -4,7 +4,7 @@ from flask_restful import Api
 from routes.routes import initialize_routes
 from flask_cors import CORS, cross_origin
 
-app = Flask(__name__,static_folder='react-app/build')
+app = Flask(__name__,static_folder='react-app/dist')
 CORS(app)
 
 @app.route("/")
