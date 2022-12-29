@@ -1,0 +1,3 @@
+[build]
+  command = "cd AgroTech\client && npm install && npm run build"
+  functions = "AgroTech"
