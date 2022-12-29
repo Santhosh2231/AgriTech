@@ -32,7 +32,7 @@ const CropDisease = () => {
         .then((response) => response.json())
         .then((data) => {
           dispatch({ type: 'SET_DATA', payload: data });
-          console.log(data)
+          // console.log(data)
         })
         .catch((error) => console.error("san: "+error))
     }

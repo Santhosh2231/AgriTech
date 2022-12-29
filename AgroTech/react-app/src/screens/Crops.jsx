@@ -23,6 +23,7 @@ const Crops = () => {
     const { Crops } = content;
     const [state, dispatch] = useReducer(dataReducer, { data: null })
     useEffect(() => {
+        window.scrollTo(0, 0);
         const getData = async () => {
           try {
             const { data } = await axios.get('http://127.0.0.1:8000/api/cropprice');
@@ -34,9 +35,6 @@ const Crops = () => {
         };
         getData();
     }, []);
-    // const {top5,bottom5,sixmonths} = data.content;
-    if(state.data)
-        console.log(state.data.context)
 
     
     return (

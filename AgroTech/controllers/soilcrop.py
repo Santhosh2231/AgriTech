@@ -80,7 +80,7 @@ class SoilAnalysis(Resource):
         path_2 = Path.cwd()
         path_2 = str(path_2)+"\\controllers\\"+"Crop_recommendation.csv"
         df=pd.read_csv(path_2)
-        context = df.groupby(['label'])['temperature', 'humidity', 'ph', 'rainfall'].mean().round(3).transpose().to_json()
+        context = pd.merge(df.groupby(['label'])['temperature', 'humidity', 'ph', 'rainfall'].min().round(0),df.groupby(['label'])['temperature', 'humidity', 'ph', 'rainfall'].max().round(0),on="label").transpose().to_json()
         context = json.loads(context)
         
         return {'context':context},200

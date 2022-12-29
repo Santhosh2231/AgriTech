@@ -3,6 +3,7 @@ import content from "../utils/content";
 import axios from "axios";
 import SoilAnalysis from '../components/SoilAnalysis';
 import { Link } from 'react-router-dom';
+import LoadingBox from '../components/LoadingBox';
 
 const DataContext = React.createContext()
 
@@ -32,9 +33,7 @@ const SoilFertility = () => {
         };
         getData();
     }, []);
-    // const {top5,bottom5,sixmonths} = data.content;
-    if(state.data)
-        console.log(state.data.context)
+    
 
     
     return (
@@ -54,11 +53,11 @@ const SoilFertility = () => {
                     <>
                     
                     <div >
-                        <p className='text-sm md:text-2xl my-10 align-middle justify-center'>Crop vs Soil Analysis</p>
+                        <p className='text-sm md:text-2xl my-10 align-middle justify-center'>Optimum Conditions for Crop vs Soil</p>
                         <div className="overflow-auto"><SoilAnalysis data={state.data.context} /></div>
                     </div>
                     </>
-                ):"Loading...."
+                ):<LoadingBox />
             }
         </div>
     )

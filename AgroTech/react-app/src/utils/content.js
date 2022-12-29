@@ -25,6 +25,7 @@ import Wheat from "../assets/images/wheat.jpg";
 import SoilImg from "../assets/icons/soilimg.jpg";
 import Diseaseimg from "../assets/icons/diseaseimg.jpg";
 import Priceimg from "../assets/icons/priceimg.jpg";
+import Home from "../assets/icons/home.jpg";
 
 import {GrLinkedin} from "react-icons/gr";
 import {BsGithub} from "react-icons/bs";
@@ -132,7 +133,7 @@ const content ={
         firstName: "AgroTech ",
         LastName: "Revolutionizing Farming with Artificial Intelligence",
         btnArray: ["A Programmer","AI & ML Enthusiast"],
-        image: Paddy,
+        image: Home,
       },
     about:{
         content: "Myself I am Santhosh. A diligent pre-final Computer Science student at VIT Chennai with an immense passion for AI&ML and MERN. Currently I am SAMSUNG PRISM developer. A passionate programmer, highly motivated and quick learner. I am always curious about things and enjoy learning. I like to solve problems and fix errors. I am a detailed oriented person and I keep my goals and tasks organized."
@@ -179,21 +180,21 @@ const content ={
             org:"Crop Recommendation based on Soil fertility",
             logo:SoilImg, 
             link:"/soilanalysis",
-            work: "Currently working on the UWB Based Static Gesture Classification"
+            work: "Agriculture forms a major occupation in countries like India. Hence, achieving good yield in the crops grown by farmers is the major concern. Various environmental factors have a significant impact on the crop yield. One such component that contributes majorly to the crop yield is soil."
           },
           {
     
             org:"Crop Disease Detection and fertilizer recommendation",
             logo: Diseaseimg,
             link:"/cropdisease",
-            work: "I am currently part of a web developer team. I have worked on building a website for MIC club using React + tailwind css. I have designed an API's for the Notify events application"
+            work: "Most plants are affected by a wide variety of bacterial and fungal diseases. Diseases on plants placed a major constraint on the production and a major threat to  food security. Hence, early and accurate identification of plant diseases is essential to ensure high quantity and best quality"
           },
           
           {
             org:"Crop Price Prediction",
             logo: Priceimg,
            link:"/priceforecast",
-            work: "I have a developed a project on Recipe Recognition using CNN. In which model takes input image of food and it recognize the food and outputs the ingredient and recipe of the food"
+            work: "Crop price estimation and evaluation are done to take an intelligent decision before farming a specific type of crop. Predicting the price of a crop will help in taking better decisions which results in minimizing the loss and managing the risk of price fluctuations."
           },
           
         ],

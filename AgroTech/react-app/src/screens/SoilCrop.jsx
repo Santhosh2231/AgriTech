@@ -36,7 +36,7 @@ const SoilCrop = () => {
         "ph":ph,
         "rainfall":rainfall
       } 
-      console.log(data);
+      
         axios
           .post("http://127.0.0.1:8000/api/soilcrop", data)
           .then(response => {
@@ -48,13 +48,6 @@ const SoilCrop = () => {
           });
 
   }
-  if(state.data){
-    state.data.context.alternative.map((e,i)=>{
-      console.log(e)
-    })
-  }
-      
-
   return (
     <div className='sm:container mt-10 justify-center align-middle'>
         <form className="w-[80%] mx-auto max-w-4xl" onSubmit={submitHandler}>
@@ -131,7 +124,7 @@ const SoilCrop = () => {
             
             <h4 className='my-10 font-Inria'>Main Suitable Crop</h4>
             <AlternativeCrops data={state.data.context.main} />
-            <h4 className='my-10 font-Inria'>Alternative Suitable Crop</h4>
+            <h4 className='my-10 font-Inria'>Alternative Suitable Crops</h4>
             <AlternativeCrops data={state.data.context.alternative} />
           </div>
         }

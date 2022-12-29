@@ -23,9 +23,9 @@ const CropPrice = () => {
         const getData = async () => {
           try {
             const { data } = await axios.get(`http://127.0.0.1:8000/api/cropprice/${crop}`);
-            console.log(data)
+            // console.log(data)
             dispatch({ type: 'SET_DATA', payload: data })
-            console.log(data);
+            // console.log(data);
           } catch (err) {
             console.log(err);
           }

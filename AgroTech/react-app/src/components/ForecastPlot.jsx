@@ -32,7 +32,7 @@ function ForecastPlot(props) {
     for(var i=0;i<12;i++){
         val.push([props.data[0][i][0],props.data[0][i][1]])
     }
-    console.log(props.data[0]);
+    // console.log(props.data[0]);
   return (
     <Chart
       // width={'800px'}
