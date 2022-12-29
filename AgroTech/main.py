@@ -9,6 +9,7 @@ CORS(app)
 
 @app.route("/")
 @cross_origin
+@app.lambda_function()
 def serve():
     return send_from_directory(app.static_folder,'index.html')
 api = Api(app)
