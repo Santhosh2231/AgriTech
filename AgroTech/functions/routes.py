@@ -1,10 +1,8 @@
-import sys
- # setting path
-sys.path.append('../controllers')
+
 # importing
-from controllers.cropdisease import cropdisease
-from controllers.soilcrop import soilcrop,SoilAnalysis
-from controllers.cropprice import crops,cropprice
+from cropdisease import cropdisease
+from soilcrop import soilcrop,SoilAnalysis
+from cropprice import crops,cropprice
 
 
 

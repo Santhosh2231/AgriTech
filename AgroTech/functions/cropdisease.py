@@ -1,6 +1,4 @@
-import sys
-# setting path
-# sys.path.append('../Models')
+
 from flask import request,Response
 from flask_restful import Resource
 from PIL import Image
@@ -9,13 +7,13 @@ import json
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
-apple = load_model("./Models/apple.h5")
-corn = load_model("./Models/corn.h5")
-peach = load_model("./Models/peach.h5")
-pepper = load_model("./Models/pepper.h5")
-potato = load_model("./Models/potato.h5")
-tomato = load_model("./Models/tomato.h5")
-check = load_model("./Models/check.h5")
+apple = load_model("../Models/apple.h5")
+corn = load_model("../Models/corn.h5")
+peach = load_model("../Models/peach.h5")
+pepper = load_model("../Models/pepper.h5")
+potato = load_model("../Models/potato.h5")
+tomato = load_model("../Models/tomato.h5")
+check = load_model("../Models/check.h5")
 appleIndex = ["Apple - Black rot","Apple - Healthy Plant"]
 cornIndex = ["Corn - Northern Leaf Blight","Corn - Healthy  Plant"]
 peachIndex = ["Peach - Bacterial Spot","Peach - Healthy  Plant"]
