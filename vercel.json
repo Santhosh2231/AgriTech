@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "AgroTech/requirements.txt",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "client/build/$1"
+    },
+    {
+      "src": "/(.*)",
+      "function": "AagroTech/$1"
+    }
+  ]
+}

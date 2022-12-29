@@ -69,7 +69,7 @@ class Commodity:
     def __init__(self, csv_name):
         self.name = csv_name
         path_2 = Path.cwd()
-        path_2 = str(path_2)+"\\"+csv_name
+        path_2 = str(path_2)+"\\controllers\\"+csv_name
         dataset = pd.read_csv(path_2)
         # print(path_2)
         self.X = dataset.iloc[:, :-1].values

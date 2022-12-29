@@ -1,4 +1,6 @@
-
+import sys
+# setting path
+sys.path.append('../models')
 from flask import request,Response
 from flask_restful import Resource
 # from models import soil_crop
@@ -45,12 +47,12 @@ class soilcrop(Resource):
         data = pd.DataFrame(test_data)
 
         path = Path.cwd()
-        path_2 = str(path)+"\\functions\\"+"soil_crop.pkl"
+        path_2 = str(path)+"\\controllers\\"+"soil_crop.pkl"
         print(path_2)
         SVC_from_joblib = joblib.load(path_2)
         y_pred = SVC_from_joblib.predict(data)
         print(y_pred)
-        path_2 = str(path)+"\\"+"Crop_recommendation.csv"
+        path_2 = str(path)+"\\controllers\\"+"Crop_recommendation.csv"
         dataset=pd.read_csv(path_2).to_numpy()
         print(test_data[0])
         neighbors = get_neighbors(dataset, test_data[0], 120)
@@ -76,7 +78,7 @@ class soilcrop(Resource):
 class SoilAnalysis(Resource):
     def get(self):
         path_2 = Path.cwd()
-        path_2 = str(path_2)+"\\"+"Crop_recommendation.csv"
+        path_2 = str(path_2)+"\\controllers\\"+"Crop_recommendation.csv"
         df=pd.read_csv(path_2)
         context = pd.merge(df.groupby(['label'])['temperature', 'humidity', 'ph', 'rainfall'].min().round(0),df.groupby(['label'])['temperature', 'humidity', 'ph', 'rainfall'].max().round(0),on="label").transpose().to_json()
         context = json.loads(context)
