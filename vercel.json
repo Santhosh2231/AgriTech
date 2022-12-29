@@ -14,10 +14,6 @@
     {
       "src": "/(.*)",
       "dest": "client/build/$1"
-    },
-    {
-      "src": "/AgroTech/main.py",
-      "function": "AagroTech/$1"
     }
   ]
 }
