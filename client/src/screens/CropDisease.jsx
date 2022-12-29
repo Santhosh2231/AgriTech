@@ -25,7 +25,7 @@ const CropDisease = () => {
       formData.append('type',type)
       formData.append('plant',plant)
 
-      fetch('http://127.0.0.1:8000/api/cropdisease', {
+      fetch('/api/cropdisease', {
         method: 'POST',
         body: formData,
       })

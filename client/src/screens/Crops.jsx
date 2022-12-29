@@ -26,7 +26,7 @@ const Crops = () => {
         window.scrollTo(0, 0);
         const getData = async () => {
           try {
-            const { data } = await axios.get('http://127.0.0.1:8000/api/cropprice');
+            const { data } = await axios.get('/api/cropprice');
             // console.log(data)
             dispatch({ type: 'SET_DATA', payload: data })
           } catch (err) {

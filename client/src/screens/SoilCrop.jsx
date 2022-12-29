@@ -38,7 +38,7 @@ const SoilCrop = () => {
       } 
       
         axios
-          .post("http://127.0.0.1:8000/api/soilcrop", data)
+          .post("/api/soilcrop", data)
           .then(response => {
             dispatch({ type: 'SET_DATA', payload: response.data })
 
