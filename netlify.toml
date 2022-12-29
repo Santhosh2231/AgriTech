@@ -1,0 +1,5 @@
+[build]
+  command = "cd client && npm install && npm run build"
+
+[build.functions]
+  source = "AgroTech"
