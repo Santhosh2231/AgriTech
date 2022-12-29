@@ -35,11 +35,12 @@ function ForecastPlot(props) {
     console.log(props.data[0]);
   return (
     <Chart
-      width={'1200px'}
+      // width={'800px'}
       height={'500px'}
       chartType="LineChart"
       data={val}
       options={options}
+      wrapper={{className:""}}
       legendToggle
     />
   )

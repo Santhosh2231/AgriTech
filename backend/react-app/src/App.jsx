@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Crops from './screens/Crops';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./screens/Home";
-import About from "./screens/About"
 import Contact from "./screens/Contact";
 import CropPrice from './screens/CropPrice';
 import CropDisease from './screens/CropDisease';

@@ -68,6 +68,26 @@
   .subtitle {
     @apply text-gray;
   }
+  .my-chart {
+    width: 500px;
+    height: 300px;
+  }
+  
+  /* Style for the chart when the screen width is less than 800px */
+  @media (max-width: 800px) {
+    .my-chart {
+      width: 300px;
+      height: 200px;
+    }
+  }
+  
+  /* Style for the chart when the screen width is less than 600px */
+  @media (max-width: 600px) {
+    .my-chart {
+      width: 200px;
+      height: 150px;
+    }
+  }
 }
 .swiper-pagination-bullet {
   @apply w-3 h-3 bg-dark_primary;
