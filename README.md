@@ -15,7 +15,7 @@ AgroVision is an innovative project aimed at revolutionizing the way farmers cho
 
 ## API's of our project.
 
-You can find API's here: Url
+You can find API's here: Url (base)
 
 ### Base URL: https://santhosh2211.pythonanywhere.com/
 
